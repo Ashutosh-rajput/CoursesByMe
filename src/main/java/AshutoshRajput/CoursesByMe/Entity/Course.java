@@ -18,13 +18,12 @@ public class Course {
     private Long courseId;
     @Column(name = "name", nullable = false)
     private String name;
+    @Column(name = "code", nullable = false)
+    private String code;
     private String description;
-    @Column(name = "price", nullable = false)
-    private Long price;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "userid", referencedColumnName = "userid")
-    private UserInfo userInfo;
+
+
 
 
 }

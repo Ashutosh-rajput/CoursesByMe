@@ -10,6 +10,6 @@ public interface CourseServiceInterface {
     CourseDTO getCourseByid(Long id);
     CourseDTO deleteCourse(Long id);
 
-    List<CourseDTO> getAllCourseByUserid(Long userid);
+    List<CourseDTO> getAllCourses();
 
 }

@@ -11,11 +11,8 @@ import lombok.*;
 public class CourseDTO {
         private Long courseId;
         private String name;
+        private String code;
         private String description;
-        private Long price;
-
-        private UserInfo userInfo;
-
 
     }
 

@@ -28,8 +28,8 @@ public class CourseServiceImpl implements CourseServiceInterface {
                 ()->new ResourceNotFoundException("Course with id is not there.")
         );
         course.setName(courseDTO.getName());
+        course.setCode(courseDTO.getCode());
         course.setDescription(courseDTO.getDescription());
-        course.setPrice(courseDTO.getPrice());
         return courseMapper.coursetocourseDTO(courseRepo.save(course));
     }
 
@@ -51,8 +51,10 @@ public class CourseServiceImpl implements CourseServiceInterface {
     }
 
     @Override
-    public List<CourseDTO> getAllCourseByUserid(Long userid) {
-        List<Course> courses=courseRepo.findByUserInfo_userid(userid);
+    public List<CourseDTO> getAllCourses() {
+        List<Course> courses=courseRepo.findAll();
         return courses.stream().map((course) ->courseMapper.coursetocourseDTO(course)).toList();
     }
+
+
 }

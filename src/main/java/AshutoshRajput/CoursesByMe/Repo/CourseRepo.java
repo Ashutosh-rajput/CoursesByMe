@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface CourseRepo extends JpaRepository<Course,Long> {
     List<Course> findByUserInfo_userid(Long userId);
+    List<Course> findByCourseDelivery_coursedeliveryId(Long id);
 
 }
