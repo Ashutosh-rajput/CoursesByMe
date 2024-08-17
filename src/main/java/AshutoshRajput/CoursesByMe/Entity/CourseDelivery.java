@@ -16,7 +16,9 @@ public class CourseDelivery {
     @SequenceGenerator(name = "seqd",sequenceName = "ex_seq",allocationSize = 1)
     @Column(name = "coursedeliveryId")
     private Long coursedeliveryId;
+    @Column(name = "year", nullable = false)
     private Long year;
+    @Column(name = "semester", nullable = false)
     private Long semester;
 
     @ManyToOne(fetch = FetchType.EAGER)
