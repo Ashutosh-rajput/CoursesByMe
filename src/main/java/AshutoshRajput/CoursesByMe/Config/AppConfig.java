@@ -1,9 +1,9 @@
 package AshutoshRajput.CoursesByMe.Config;
 
+import AshutoshRajput.CoursesByMe.Mapper.CourseDeliveryMapper;
 import AshutoshRajput.CoursesByMe.Mapper.CourseMapper;
-import AshutoshRajput.CoursesByMe.Mapper.UserInfoMapper;
+import AshutoshRajput.CoursesByMe.Service.ServiceImpl.CourseDeliveryServiceImpl;
 import AshutoshRajput.CoursesByMe.Service.ServiceImpl.CourseServiceImpl;
-import AshutoshRajput.CoursesByMe.Service.ServiceImpl.UserInfoServiceImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,12 +18,12 @@ public class AppConfig {
     }
 
     @Bean
-    public UserInfoServiceImpl userInfoService(){
-        return new UserInfoServiceImpl();
+    public CourseDeliveryServiceImpl courseDeliveryService(){
+        return new CourseDeliveryServiceImpl();
     }
     @Bean
-    public UserInfoMapper userInfoMapper(){
-        return new UserInfoMapper();
+    public CourseDeliveryMapper courseDeliveryMapper(){
+        return new CourseDeliveryMapper();
     }
     @Bean
     public CourseServiceImpl courseService(){

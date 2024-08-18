@@ -13,7 +13,7 @@ import lombok.*;
 public class CourseDelivery {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seqd")
-    @SequenceGenerator(name = "seqd",sequenceName = "ex_seq",allocationSize = 1)
+    @SequenceGenerator(name = "seqd",sequenceName = "ex_seq2",allocationSize = 1)
     @Column(name = "coursedeliveryId")
     private Long coursedeliveryId;
     @Column(name = "year", nullable = false)

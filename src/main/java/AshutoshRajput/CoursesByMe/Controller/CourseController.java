@@ -1,7 +1,6 @@
 package AshutoshRajput.CoursesByMe.Controller;
 
 import AshutoshRajput.CoursesByMe.DTO.CourseDTO;
-import AshutoshRajput.CoursesByMe.DTO.UserInfoDTO;
 import AshutoshRajput.CoursesByMe.Service.ServiceImpl.CourseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
