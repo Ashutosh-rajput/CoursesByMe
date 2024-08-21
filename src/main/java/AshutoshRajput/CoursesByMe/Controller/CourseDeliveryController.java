@@ -6,6 +6,7 @@ import AshutoshRajput.CoursesByMe.Entity.Course;
 import AshutoshRajput.CoursesByMe.Service.ServiceImpl.CourseDeliveryServiceImpl;
 import AshutoshRajput.CoursesByMe.Service.ServiceImpl.CourseServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,5 +29,10 @@ public class CourseDeliveryController {
     @GetMapping("instances/{year}/{semester}/{id}")
     public CourseDeliveryDTO getDeliverybyyearsemcourseid(@PathVariable Long year, @PathVariable Long semester,@PathVariable Long id){
         return courseDeliveryService.getCourseDeliveryByyearsemesterandid(year, semester, id);
+    }
+    @DeleteMapping("instances/{year}/{semester}/{id}")
+    public ResponseEntity<String> deletedeliverybyyearsemcourseid(@PathVariable Long year, @PathVariable Long semester,@PathVariable Long id){
+        courseDeliveryService.deleteCourseDeliveryByyearsemesterandid(year, semester, id);
+        return ResponseEntity.ok("Course Delivery deleted Succesfully");
     }
 }

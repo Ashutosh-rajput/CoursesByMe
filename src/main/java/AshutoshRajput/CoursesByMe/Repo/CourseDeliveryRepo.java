@@ -9,5 +9,6 @@ import java.util.Optional;
 public interface CourseDeliveryRepo extends JpaRepository<CourseDelivery,Long> {
     List<CourseDelivery> findByYearAndSemester(Long year, Long semester);
     Optional<CourseDelivery> findByYearAndSemesterAndCourse_courseId(Long Year, Long Semester, Long courseId);
+    boolean existsByCourse_CourseId(Long courseId);
 
 }

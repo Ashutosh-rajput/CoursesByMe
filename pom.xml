@@ -12,7 +12,7 @@
 	<artifactId>CoursesByMe </artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CoursesByMe </name>
-	<description>This is a Internship assignment by IIT Bombay.</description>
+	<description>This is Internship assignment by IIT Bombay.</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -76,6 +76,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>CoursesByMe</finalName>
 	</build>
 
 </project>

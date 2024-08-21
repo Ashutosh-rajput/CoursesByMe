@@ -13,7 +13,7 @@ public class CourseDeliveryMapper {
     @Autowired
     private ModelMapper modelMapper;
 
-    public CourseDelivery courseDeliveryDTOtoCourseDelivery(CourseDeliveryDTO courseDeliveryDTO, Course course) {
+    public CourseDelivery courseDeliveryDTOtoCourseDelivery(CourseDeliveryDTO courseDeliveryDTO,Course course) {
         CourseDelivery courseDelivery = modelMapper.map(courseDeliveryDTO, CourseDelivery.class);
         courseDelivery.setCourse(course);
         return courseDelivery;

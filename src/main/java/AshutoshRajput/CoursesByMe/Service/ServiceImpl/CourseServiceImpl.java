@@ -2,8 +2,10 @@ package AshutoshRajput.CoursesByMe.Service.ServiceImpl;
 
 import AshutoshRajput.CoursesByMe.DTO.CourseDTO;
 import AshutoshRajput.CoursesByMe.Entity.Course;
+import AshutoshRajput.CoursesByMe.ExceptionHandling.CourseDeletionException;
 import AshutoshRajput.CoursesByMe.ExceptionHandling.ResourceNotFoundException;
 import AshutoshRajput.CoursesByMe.Mapper.CourseMapper;
+import AshutoshRajput.CoursesByMe.Repo.CourseDeliveryRepo;
 import AshutoshRajput.CoursesByMe.Repo.CourseRepo;
 import AshutoshRajput.CoursesByMe.Service.ServiceInterface.CourseServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class CourseServiceImpl implements CourseServiceInterface {
     private CourseRepo courseRepo;
     @Autowired
     private CourseMapper courseMapper;
+    @Autowired
+    private CourseDeliveryRepo courseDeliveryRepo;
+
     @Override
     public CourseDTO createCourse(CourseDTO courseDTO) {
         Course course=courseMapper.courseDTOtocourse(courseDTO);
@@ -46,6 +51,9 @@ public class CourseServiceImpl implements CourseServiceInterface {
         Course course=courseRepo.findById(id).orElseThrow(
                 ()->new ResourceNotFoundException("Course with id is not there.")
         );
+        if (courseDeliveryRepo.existsByCourse_CourseId(id)) {
+            throw new CourseDeletionException("Cannot delete course. Please delete associated deliveries first.");
+        }
         courseRepo.delete(course);
         return courseMapper.coursetocourseDTO(course);
     }

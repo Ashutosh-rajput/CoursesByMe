@@ -1,5 +1,6 @@
 package AshutoshRajput.CoursesByMe.DTO;
 
+import AshutoshRajput.CoursesByMe.Entity.Course;
 import lombok.*;
 
 @ToString
@@ -11,5 +12,6 @@ public class CourseDeliveryDTO {
     private Long coursedeliveryId;
     private Long year;
     private Long semester;
-    private Long courseId;  // Reference to the course
+    private Long courseId;
+//    private Course course;
 }

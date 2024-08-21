@@ -31,11 +31,10 @@ public class CourseDeliveryServiceImpl implements CourseDeliveryServiceInterface
     @Override
     public CourseDeliveryDTO createCourseDelivery(CourseDeliveryDTO courseDeliveryDTO) {
         Course course = courseRepository.findById(courseDeliveryDTO.getCourseId())
-                .orElseThrow(() -> new ResourceNotFoundException("Course not found"));
+                .orElseThrow(() -> new RuntimeException("Course not found"));
         CourseDelivery courseDelivery = courseDeliveryMapper.courseDeliveryDTOtoCourseDelivery(courseDeliveryDTO, course);
         courseDelivery = courseDeliveryRepository.save(courseDelivery);
         return courseDeliveryMapper.courseDeliveryToCourseDeliveryDTO(courseDelivery);
-
     }
 
     @Override
